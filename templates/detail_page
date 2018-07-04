@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+  <h3>{{ pet.name|capfirst }}</h3>
+  <img src="{{ pet.image }}" width="240">
+  <p>{{ pet.species }}</p>
+  {% if pet.breed %}
+    <p>studio: {{ pet.studio }}</p>
+  {% endif %}
+  {% if pet.age %}
+    <p>released: {{ pet.released }}</p>
+  {% endif %}
+  {% if pet.sex %}
+    <p>synopsis: {{ pet.synopsis }}</p>
+  {% endif %}
+  <p>{{ pet.my_thoughts }}</p>
+
+
+</div>
+{% endblock %}
