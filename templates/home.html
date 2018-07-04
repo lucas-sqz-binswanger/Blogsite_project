@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div>
+  {% for pet in pets %}
+    <div class="petname">
+      <a href="{% url 'pet_detail' pet.id %}">
+        <h3>{{ pet.name|capfirst }}</h3>
+
+
+      </a>
+
+      {% if pet.studio %}
+        <p>studio: {{ pet.studio }}</p>
+      {% endif %}
+      <img src="{{ pet..url }}" width="240">
+      <p class="hidden">{{ pet.released }}</p>
+      <p class="hidden">{{ pet.synopsis }}</p>
+      <p class="hidden">{{ pet.my_thoughts}}</p>
+
+
+    </div>
+  {% endfor %}
+
+</div>
+{% endblock %}
